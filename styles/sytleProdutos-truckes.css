@@ -275,7 +275,7 @@ header hr {
   .main-produtosTruckes{
     flex-direction: column;
     display: flex;
-    width: 80%;
+    width: 90%;
     justify-self: center;
   }
 
