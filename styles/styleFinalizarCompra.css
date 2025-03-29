@@ -1,0 +1,330 @@
+    /* Reset e estilos gerais */
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f9f9f9;
+      }
+      header {
+        padding: 15px 0;
+        color: #fff;
+        width: 100%;
+        box-shadow: 5px 5px 10px rgba(245, 245, 245); /* Sombra branca */
+      }
+      .cabecalho-header {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cabecalho-img img {
+        width: 50px;
+        border-radius: 50%;
+      }
+      .cabecalho-seguranca {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .div-icone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 5px;
+        background-color: #84fa84;
+        border-radius: 5px;
+      }
+      .cabecalho-seguranca > div > p {
+        line-height: 1.2;
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+        color: #888;
+      }
+      .cabecalho-seguranca > div > p:nth-child(1) {
+        font-weight: bold;
+      }
+      .principal {
+        width: 80%;
+        margin: 50px auto;
+      }
+      /* Indicador de etapas */
+      .container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+      .item {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .icone {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .icone i {
+        color: #888;
+        font-size: 16px;
+        border: 1px solid #888;
+        border-radius: 50%;
+        padding: 10px;
+      }
+      .item p {
+        font-size: 12px;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        margin-top: 10px;
+      }
+      /* Container principal de conteúdo */
+      .container-principal {
+        margin-bottom: 30px;
+      }
+      /* Linhas e colunas para layout */
+      .row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .col-endereco {
+        flex: 2;
+      }
+      .col-produto {
+        flex: 1;
+      }
+      .col-pagamento {
+        width: 100%;
+      }
+      /* Dados de Contato e Entrega */
+      .dadosContato, .entrega {
+        border: 1px solid #888;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fff;
+      }
+      .dadosContato h3,
+      .entrega h3 {
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 20px;
+      }
+      .input {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: #e6e6e6;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .input label {
+        font-family: 'Inter', sans-serif;
+        font-size: 10px;
+      }
+      .input input {
+        margin: 5px 0 0 5px;
+        outline: none;
+        border: none;
+        background-color: #e6e6e6;
+      }
+      .checkbox {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        font-family: 'Poppins', sans-serif;
+      }
+      .checkbox label {
+        color: #888;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      .checkbox input {
+        display: none;
+      }
+      .checkbox span {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #000;
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+      }
+      .checkbox input:checked + span {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .checkbox input:checked + span::after {
+        content: "✔";
+        color: white;
+        font-size: 14px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+      }
+      /* CEP e Endereço */
+      .cep {
+        align-items: center;
+        margin-top: 20px;
+        display: flex;
+        border-radius: 5px;
+        padding: 10px;
+        justify-content: space-between;
+        border: 1px solid #007bff;
+      }
+      .cep label {
+        font-family: 'Inter', sans-serif;
+        font-size: 10px;
+      }
+      .cep-input {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+      }
+      .cep input {
+        margin: 5px 0 0 5px;
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+      .cep a {
+        text-decoration: none;
+        font-family: 'Inter', sans-serif;
+        color: #007bff;
+        font-size: 13px;
+      }
+      /* Remove as setas dos inputs do tipo number */
+      .cep input[type="number"]::-webkit-inner-spin-button,
+      .cep input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .cep input[type="number"] {
+        -moz-appearance: textfield;
+      }
+      .button {
+        margin-top: 10px;
+        display: flex;
+        justify-content: end;
+      }
+      .button button {
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 15px;
+        background-color: #007bff;
+        border: none;
+        width: 25%;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+      }
+      .button button:hover {
+        background-color: #0073ee;
+      }
+      /* Resumo do Pedido */
+      .resumo-pedido {
+        border: 1px solid #888;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .resumo-pedido h3 {
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 20px;
+      }
+      .produtos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .produto {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #888;
+      }
+      .total {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+      }
+      /* Opções de Pagamento */
+      .opcoes-pagamento {
+        border: 1px solid #888;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .opcoes-pagamento h3 {
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 20px;
+      }
+      .opcao {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        color: #888;
+      }
+      .opcao input[type="radio"] {
+        accent-color: #007bff;
+      }
+      /* Finalizar Compra */
+      .finalizar-compra {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      .finalizar-compra button {
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 15px 30px;
+        background-color: #007bff;
+        border: none;
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        font-size: 16px;
+        width: 100%;
+      }
+      .finalizar-compra button:hover {
+        background-color: #0073ee;
+      }
+
+      .produto-div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .discimg{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .disc-produto{
+        width: 50%;
+      } 
+      .produto-img img{
+        width: 50px;
+      }

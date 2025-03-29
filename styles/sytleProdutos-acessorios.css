@@ -1,0 +1,736 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f5f5;
+    padding-top: 200px ;
+}
+
+/*header*/
+/* Estiliza o cabeçalho */
+header {
+    background-color: #333;
+    padding: 20px 0;
+    color: #fff;
+    width: 100%;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+ 
+}
+
+/* Estiliza a navegação */
+nav.info-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Estiliza o logo */
+.logo {
+    margin-right: auto; /* Move o logo para a extrema esquerda */
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%; /* Torna o logo circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+    transition: transform 0.3s; /* Animações suaves para transformações */
+}
+
+.logo img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do logo ao passar o mouse */
+}
+
+/* Estiliza a barra de busca */
+
+.input {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    flex-grow: 1;
+    max-width: 700px; /* Define a largura máxima */
+    margin-right: 0px; /* Adiciona espaçamento à direita */
+}
+
+.input input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    flex-grow: 1; /* Permite que o input preencha o espaço dentro do contêiner */
+}
+
+.input i {
+    color: #888;
+}
+
+/* Estiliza os ícones de informação */
+.icons-info {
+    cursor:pointer;
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* Move os ícones para a extrema direita */
+}
+
+
+.icons-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.icons-info i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.icons-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Estiliza a linha horizontal */
+header hr {
+    border: none;
+    border-top: 1px solid #fff;
+    margin: 20px 0;
+}
+
+/* Estiliza o novo menu de navegação */
+.menu-nav {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.menu-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.menu-nav li {
+    display: inline;
+    margin: 0 15px;
+    
+}
+
+.menu-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.menu-nav a:hover {
+    color: #ddd;
+}
+.user-menu {
+    position: relative; /* Para posicionar o dropdown corretamente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.user-icon {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estiliza o menu dropdown */
+.user-menu > .dropdown-menu {
+    display: none; /* Esconde o menu por padrão */
+    position: absolute;
+    top: 60px; /* Ajusta a posição vertical */
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Mostra o menu ao clicar*/
+.user-menu > .dropdown-menu.active {
+    display: block;
+}
+
+/* Estiliza os links dentro do menu */
+.user-menu .dropdown-menu a {
+    display: block;
+    padding: 8px 12px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+
+.user-menu .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+/* Opção de filtragem */
+
+/* Menu de escolha de filtragrem */
+.escolha-dropdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.escolha-dropdown p{
+    font-family: 'Inter', sans-serif;
+}
+
+.dropdown {
+    position: relative;
+    width: 250px;
+  }
+  .dropdown-btn {
+    background-color: #000;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  
+  .dropdown-btn span {
+    font-size: 16px;
+  }
+
+  .dropdown-menu-filter {
+    position: absolute;
+    top: 45px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+
+  
+  .dropdown-menu-filter.show {
+    display: block;
+    opacity: 1;
+  }
+
+  .dropdown-menu-filter button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .dropdown-menu-filter button:hover {
+    background-color: #e8e3e3;
+  }
+
+  .arrow {
+    transition: transform 0.3s ease;
+    font-size: 18px;
+  }
+
+  
+  /* Main produtos */
+
+  .main-produtosCamisetas{
+    flex-direction: column;
+    display: flex;
+    width: 90%;
+    justify-self: center;
+  }
+
+  .skate-vmenu span{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.skate-vmenu a{
+    text-decoration: none;
+    font-size: 15px;
+    color: #888;
+    font-family: 'Poppins', sans-serif;
+  
+}
+
+.skate-vmenu a:hover{
+    color: #a5a5a5;
+    text-decoration: underline;
+}
+
+.skate-section{
+    margin-top:30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtragem-produtos{
+    margin-top:20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Section de categoria  */
+.categoria h4{
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.categoria p{
+    cursor: pointer;
+    line-height: 1;
+    color:#585858;
+    transition: color 0.3s ease;
+}
+
+.categoria p:hover{
+    color: black;
+}
+
+h4{
+    margin-top: 10px;
+}
+
+/* Filtrar por : */
+
+.checkbox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    width: 200px;
+}
+
+.verMais{
+    padding: 0 10px;
+    font-size: 15px;
+    margin-top: 5px;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.checkbox p{
+    margin-top: 5px;
+}
+.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+  /* Oculta o checkbox padrão */
+.checkbox input, .checkbox > .hidden, .categoria > .hidden{
+    display: none;
+}
+
+  /* Cria um checkbox estilizado */
+  .checkbox span {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+}
+
+  /* Adiciona o efeito quando o checkbox for marcado */
+.checkbox input:checked + span {
+    background-color: #000;
+    border-color: #000;
+}
+
+  /* Ícone de check ✔ */
+.checkbox input:checked + span::after {
+    content: "✔";
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+
+.preco{
+    display:flex ;
+    width: 200px;
+    gap: 5px;
+}
+
+.preco > div{
+    width: 100%;
+}
+
+.preco > div > input{
+    padding: 0 5px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+}
+
+   /* Remove as setas no Chrome, Safari, Edge e Opera */
+   .preco input[type="number"]::-webkit-inner-spin-button,  
+   .preco input[type="number"]::-webkit-outer-spin-button {  
+        -webkit-appearance: none;  
+        margin: 0;  
+    }  
+   
+    /* Remove as setas no Firefox */
+    .preco  input[type="number"] {  
+       -moz-appearance: textfield;  
+    }
+   
+    /* Produtos da loja */
+
+
+  .aba-produtos{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      justify-items: center;
+      gap: 20px;
+    }
+  
+  .card-produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Garante que os elementos sejam distribuídos de forma uniforme */
+    border-radius: 12px;
+    padding: 20px 10px;
+    width: 300px; /* Define uma largura fixa para todos os cards */
+    height: 470px; /* Define uma altura fixa para todos os cards */
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box; /* Garante que o padding não afete a largura/altura */
+  }
+  
+  .card-produtos:hover {
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-imagem {
+    position: relative;
+  }
+  
+  .card-imagem img {
+    display: block;
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease; /* Aplica transição suave à transformação */
+  }
+
+  .card-imagem img:hover{
+    transform: scale(1.1);
+  }
+
+  .card-imagem:hover .card-imagem-hover {
+    display: block;
+  }
+  
+  .card-imagem-hover {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .card-imagem:hover .card-imagem-hover {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+
+  .card-imagem:hover > img {
+    opacity: 0; 
+  }
+
+  
+  .info-produtos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    gap: 5px;
+    flex-grow: 1; /* Faz o conteúdo expandir para preencher o espaço restante */
+  }
+  
+  .info-produtos h4 {
+    background-color: #b1e4c6;
+    color: #13793d;
+    padding: 2px 20px;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+  }
+  
+.info-produtos h3 {
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  height: 30px; /* Define uma altura fixa para o título */
+  line-height: 15px; /* Ajusta o espaçamento entre as linhas */
+  overflow: hidden; /* Oculta qualquer texto que ultrapasse o limite de altura */
+  white-space: wrap; /* Impede que o texto quebre em múltiplas linhas */
+  text-overflow: ellipsis; /* Adiciona "..." no final do texto, se for muito longo */
+}
+
+  .info-produtos span {
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .precos {
+    line-height: 1.5;
+  }
+  
+  .precos p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'roboto', sans-serif;
+    color: black; /* Cor de destaque para o preço com desconto */
+  }
+  
+  .precos span {
+    font-size: 15px;
+  }
+  
+  .parcelamento {
+    font-family: 'Roboto', sans-serif;
+    color: #a5a5a5;
+    font-size: 12px;
+  }
+  
+  .botao-cardProdutos {
+    background-color: #000;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    width: 100%; /* Garante que o botão ocupe toda a largura do card */
+    border-radius: 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+  }
+  
+  .botao-cardProdutos:hover {
+    background-color: #333;
+  }
+  
+    .bnt-prox{
+        margin: 50px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+    
+      .bnt-prox button{
+        background-color: #cccccc50;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 5px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+      }
+
+      
+/* WhastAPP */
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-decoration: none;
+    animation: pulse 1.5s infinite; /* Pulsa continuamente */
+  }
+  
+  .whatsapp-button:hover {
+    background-color: #1ebe57;
+  }
+  
+  .whatsapp-button img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1); /* Tamanho normal no início e no final */
+    }
+    50% {
+      transform: scale(1.1); /* Aumenta 10% no meio */
+    }
+  }
+  /* Footer */
+  
+  /* Estilizando o Footer */
+  footer {
+    width: 100%; /* Ocupa toda a largura da tela */
+    background-color: #1a1a2e; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 40px 10%; /* Espaçamento interno */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  /* Layout flexível para os conteúdos dentro do footer */
+  .footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  }
+  
+  /* Ajuste da logo e texto ao lado */
+  .footer-logo-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o texto */
+    max-width: 300px;
+  }
+  
+  .footer-logo-info img {
+    display: block; /* Garante que a imagem fique como um bloco separado */
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    margin: 0; /* Remove qualquer margem que possa estar centralizando */
+    padding: 0;
+    align-self: flex-start; /* Alinha a imagem no topo da div */
+    margin-bottom: 10px;
+    filter: invert(100%);
+  }
+  
+  /* Ajuste das colunas de informações */
+  .footer-info div {
+    min-width: 200px; /* Evita que fiquem muito pequenos */
+    margin-right: 20px;
+  }
+  
+  /* Ícones sociais */
+  .footer-info i {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  
+  .footer-info p,a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+  }
+  
+  .footer-info a{
+    line-height: 2;
+  }
+  
+  .footer-instituicao a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .footer-instituicao a:hover{
+    color:#a5a5a5;
+    transform: translateX(10px);
+  }
+  
+  .footer-credito img, .footer-deposito img{    
+    width: 3%;
+  }
+  
+  .footer-pagamento{
+    margin-top: 50px;
+  }
+  
+  .footer-credito{
+    margin-top: 20px;
+    
+  }
+  
+  .fa-whatsapp{
+    color: #25d366;
+  }
+  
+  .fa-linkedin{
+    color: #0e76a8;
+  }
+  
+  .fa-pinterest{
+    color: #c8232c;
+  }

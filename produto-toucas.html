@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/sytleProdutos-toucas.css" />
+     <link rel="stylesheet" href="./styles/syleModal.css" />
+    <link rel="stylesheet" href="./styles/Carrinho.css">
+    <title>Toucas</title>
+  </head>
+  <body>
+    <!--Cabeçalho do site-->
+    <header>
+      <nav class="info-nav">
+        <div class="logo">
+          <img src="./imagens/logo/logo-header.png" alt="Logo do Skate Tech" />
+        </div>
+
+        <div class="input">
+          <input type="text" placeholder="O que você está buscando?" />
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="icons-info">
+         <div id="openModal">
+            <i class="fa-solid fa-comments"></i>
+            <p>Atendimento</p>
+          </div>
+
+          <div class="user-menu">
+            <div class="user-icon">
+              <i class="fa-regular fa-user"></i>
+              <p>Usuário</p>
+            </div>
+
+            <!-- Menu dropdown que aparecerá ao passar o mouse -->
+            <div class="dropdown-menu">
+              <a href="login.html">Fazer Login</a>
+              <a href="./cadastro.html">Criar Conta</a>
+            </div>
+          </div>
+
+             <div
+          class="cart-container"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <div class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>Carrinho</p>
+            <span class="badge" id="cart-count">0</span>
+          </div>
+        </div>
+
+        </div>
+      </nav>
+      <!-- Linha horizontal para separar as seções -->
+      <hr />
+
+      <!-- Novo menu abaixo do conteúdo existente no header -->
+      <nav class="menu-nav">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="././PaginaSkatesMontados.html">Skates Montados</a></li>
+          <li><a href="./paginaSobre.html">Sobre a skate tech</a></li>
+          <li><a href="./produtos.html">Produtos</a></li>
+          <li><a href="./paginaContato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <!-- Ícone do Carrinho com Badge -->
+
+   <div
+     class="offcanvas offcanvas-end"
+     tabindex="-1"
+     id="offcanvasRight"
+     aria-labelledby="offcanvasRightLabel"
+   >
+     <div class="offcanvas-header">
+       <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho de Compras</h5>
+       <button
+         type="button"
+         class="btn-close"
+         data-bs-dismiss="offcanvas"
+         aria-label="Close"
+       ></button>
+     </div>
+     <div class="offcanvas-body">
+       <!-- Container dos Produtos (inicia vazio) -->
+       <div class="produtos-lista" id="cart-list">
+         <p id="empty-cart-msg">Seu carrinho está vazio.</p>
+       </div>
+
+       <!-- Rodapé Fixo -->
+       <div class="info-compra">
+         <div class="info-frete">
+           <hr />
+           <div>
+             <p>
+               <span class="bolinha"></span>
+               Ganhe <span>Frete Grátis</span> a partir de <span>R$400</span> em compras para todo o Brasil
+             </p>
+           </div>
+           <hr />
+         </div>
+         <div class="info-preco">
+           <p id="cart-item-count">Itens: 0</p>
+           <p id="cart-subtotal">Subtotal: <strong>R$ 0,00</strong></p>
+         </div>
+         <div class="button-comprar">
+           <a href="./finalizarCompra.html"><button>Finalizar Compra</button></a>
+             <a id="voltar">Continuar comprando</a>
+         </div>
+       </div>
+     </div>
+   </div>
+
+
+  <!-- Modal de Atendimento -->
+  <div id="atendimentoModal" class="modal-atendimento">
+    <div class="modal-content">
+      <div class="cabecalho-modal">
+        <span class="close" id="closeBtn">&times;</span>
+        <h2>Informações de Atendimento</h2>
+      </div>
+      <!-- WhatsApp -->
+      <div class="tipos-contato">
+        <p>Atendimento Via WhatsApp</p>
+        <div class="whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>(11) 99999-9999</span>
+        </div>
+      </div>
+      <!-- Email -->
+      <div class="tipos-contato">
+        <p>Atendimento Via Email</p>
+        <div class="email-modal">
+          <i class="fa-solid fa-envelope"></i>
+          <span>atendimentoskateshop@senac.com</span>
+        </div>
+      </div>
+      <!-- Horário de atendimento -->
+      <div class="tipos-contato">
+        <p>Horário de Atendimento</p>
+        <div class="horario">
+          <i class="fa-solid fa-clock"></i>
+          <span>Segunda a sexta das 08h as 18h</span>
+        </div>
+      </div>
+      <!-- Nosso endereço -->
+      <div class="tipos-contato">
+        <p>Nosso Endereço</p>
+        <div class="endereco">
+          <span>SKATE TECH</span>
+          <span>Rua Senac, 123 - São Paulo - SP</span>
+          <span>São Paulo/SP</span>
+          <span>CEP: 090720-004</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <main class="main-produtosCamisetas">
+      <section class="skate-section">
+        <div class="skate-vmenu">
+          <ol>
+            <a href="./index.html">Home</a>
+            <span>> <a href="./produtos.html">Pagina Produtos</a></span>
+            <span>> Camisetas</span>
+          </ol>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropdown-btn">
+            <span id="selected-option">Destaque</span>
+            <span class="arrow">▼</span>
+          </button>
+          <div class="dropdown-menu-filter">
+            <button onclick="selectOption('A-Z')">A - Z</button>
+            <button onclick="selectOption('Z-A')">Z - A</button>
+            <button onclick="selectOption('Maior ao menor')">
+              Preço: Maior ao menor
+            </button>
+            <button onclick="selectOption('Menor ao maior')">
+              Preço: Menor ao maior
+            </button>
+            <button onclick="selectOption('Mais antigos')">Mais antigo</button>
+            <button onclick="selectOption('Mais novo')">Mais novo</button>
+            <button onclick="selectOption('Mais vendidos')">
+              Mais vendidos
+            </button>
+            <button onclick="selectOption('Lançamentos')">Lançamentos</button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="filtragem-produtos">
+          <div>
+            <div class="categoria">
+              <h4>Toucas</h4>
+              <p class="label-grup">Girl Skateboards</p>
+              <p class="label-grup">Chocolate Skateboards</p>
+              <p class="label-grup">Spitfire Wheels</p>
+              <p class="label-grup">Royal Trucks</p>
+              <p class="label-grup">Thunder Trucks</p>
+              <p class="label-grup-none hidden">Bones</p>
+              <p class="label-grup-none hidden">Anti Hero Skateboards</p>
+              <p class="label-grup-none hidden">Vans</p>
+              <p class="label-grup-none hidden">High Company</p>
+              <p class="label-grup-none hidden">Primitive</p>
+              <p class="label-grup-none hidden">LRG</p>
+              <p class="label-grup-none hidden">Thrasher</p>
+              <p class="label-grup-none hidden">DC Shoes</p>
+              <p class="label-grup-none hidden">Black Sheep</p>
+              <p class="label-grup-none hidden">Element</p>
+              <p class="label-grup-none hidden">RVCA</p>
+              <button class="verMais">Ver mais</button>
+            </div>
+
+            <h4>Filtrar por</h4>
+
+            <h6>Cor</h6>
+            <div class="checkbox">
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Preto
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Branco
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Vermelho
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Azul
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Cinza
+              </label>
+              <label class="label-grup-none hidden">
+                <input type="checkbox" /><span></span>Verde
+              </label>
+              <label class="label-grup-none hidden">
+                <input type="checkbox" /><span></span>Amarelo
+              </label>
+              <label class="label-grup-none hidden">
+                <input type="checkbox" /><span></span>Rosa
+              </label>
+              <label class="label-grup-none hidden">
+                <input type="checkbox" /><span></span>Laranja
+              </label>
+              <label class="label-grup-none hidden">
+                <input type="checkbox" /><span></span>Roxo
+              </label>
+              <button class="verMais">Ver mais</button>
+            </div>
+
+            <h6>Modelos</h6>
+            <div class="checkbox">
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Gorro clássico
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Gorro slouchy
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Gorro com dobra
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Gorro sem dobra
+              </label>
+            </div>
+
+            <h6>Material</h6>
+            <div class="checkbox">
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Algodão
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Lã
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Acrílico
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Misto
+              </label>
+            </div>
+
+            <h6>Tamanho</h6>
+            <div class="checkbox">
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>Único
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>P
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>M
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>G
+              </label>
+              <label class="label-grup">
+                <input type="checkbox" /><span></span>GG
+              </label>
+            </div>
+
+            <h6>Preços</h6>
+            <div class="preco">
+              <div>
+                <label>De</label><br />
+                <input type="number" placeholder="R$50,00" />
+              </div>
+
+              <div>
+                <label>Até</label><br />
+                <input type="number" placeholder="R$500,00" />
+              </div>
+            </div>
+          </div>
+
+          <section class="aba-produtos">
+            <!--Inserindo os produtos com javascript-->
+          </section>
+        </div>
+
+        <div class="bnt-prox">
+          <button>Primeria Página</button>
+          <button><i class="fa-solid fa-caret-left"></i></button>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button><i class="fa-solid fa-caret-right"></i></button>
+          <button>Última Página</button>
+        </div>
+      </section>
+      <a
+        href="https://wa.me/5599999999999"
+        class="whatsapp-button"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+        />
+      </a>
+    </main>
+    <!--Footer-->
+    <footer>
+      <div class="footer-info">
+        <div class="footer-logo-info">
+          <img src="./imagens/logo/logo-footer.png" alt="logo site" />
+
+          <p>
+            UMA LOJA DE SKATE VIRTUAL
+            <br />
+            <br />
+            Confira os produtos na loja e se gostar fique a vontade para comprar
+          </p>
+        </div>
+
+        <div class="footer-instituicao">
+          <h3>INSTITUCIONAL</h3>
+          <a href="./paginaSobre.html">Quem somos</a>
+          <a href="./paginaContato.html">Fale conosco</a>
+           <a href="./produtos.html">Produtos</a>
+          <a href="">Política de privacidade</a>
+          <a href="https://github.com/cauagoncalves-p" target="_blank">GitHub</a>
+          <a href="https://www.sp.senac.br/" target="_blank">Senac</a>
+        </div>
+
+        <div class="footer-atendimento">
+          <h3>Atendimento</h3>
+          <span>(55) 11 90000-0000</span>
+          <p>atendimentoskateshop@senac.com</p>
+          <p>Seg. a Sab. das 08h as 12h</p>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-pinterest"></i>
+        </div>
+
+        <div class="footer-pagamento">
+          <h3>Formas de pagamentos</h3>
+          <div class="footer-deposito">
+            <p>Deposito bancário</p>
+            <img src="./imagens/imagens pagamentos/pix.png" alt="" />
+            <img src="./imagens/imagens pagamentos/boleto.png" alt="" />
+          </div>
+
+          <div class="footer-credito">
+            <p>Cartão de crédito</p>
+            <img src="./imagens/imagens pagamentos/visa.png" alt="" />
+            <img src="./imagens/imagens pagamentos/mastercard.png" alt="" />
+            <img src="./imagens/imagens pagamentos/mercado pago.png" alt="" />
+            <img src="./imagens/imagens pagamentos/elo.png" alt="" />
+            <img
+              src="./imagens/imagens pagamentos/american-express.png"
+              alt=""
+            />
+            <img src="./imagens/imagens pagamentos/hipercard.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/a90edbe231.js"
+      crossorigin="anonymous"
+    ></script>
+
+   <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+    <script src="./js/produtos-toucas.js"></script>
+    <script src="./js/Carrinho.js"></script>
+  </body>
+</html>

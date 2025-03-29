@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko:wght@300..700&display=swap">
+  <link rel="stylesheet" href="./styles/styleFinalizarCompra.css">
+  <title>Finalizar Compra</title>
+
+</head>
+
+<body>
+  <header>
+    <div class="cabecalho-header">
+      <div class="cabecalho-img">
+        <img src="./imagens/logo/logo-header.png" alt="Logo">
+      </div>
+      <div class="cabecalho-seguranca">
+        <div class="div-icone">
+          <i class="fa-solid fa-shield"></i>
+        </div>
+        <div>
+          <p>Compra Segura</p>
+          <p>100% Protegida</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="principal">
+    <!-- Indicador de Etapas -->
+    <section class="secao">
+      <div class="container">
+        <div class="item">
+          <div class="icone">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <p>Carrinho</p>
+        </div>
+        <div class="item">
+          <div class="icone">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+          <p>Entrega</p>
+        </div>
+        <div class="item">
+          <div class="icone">
+            <i class="fa-solid fa-credit-card"></i>
+          </div>
+          <p>Pagamento</p>
+        </div>
+      </div>
+
+      <!-- Conteúdo principal -->
+      <div class="container-principal">
+        <!-- Primeira linha: Endereço e Resumo do Pedido lado a lado -->
+        <div class="row">
+          <div class="col-endereco">
+            <div class="opcao-pedido">
+              <div class="dadosContato">
+                <h3>Dados de contato</h3>
+                <div class="input">
+                  <label for="email">Email:</label>
+                  <input type="text" name="email" placeholder="seuemail@gmail.com">
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" />
+                    <span></span>
+                    Receber ofertas e novidades por e-mail
+                  </label>
+                </div>
+              </div>
+              <div class="entrega">
+                <h3>Entrega</h3>
+                <div class="cep">
+                  <div class="cep-input">
+                    <input type="number" placeholder="CEP">
+                  </div>
+                  <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank">Não sei meu
+                    CEP</a>
+                </div>
+                <div class="endereco">
+                  <div class="input">
+                    <label for="rua">Rua:</label>
+                    <input type="text" name="rua" placeholder="Rua">
+                  </div>
+                  <div class="input">
+                    <label for="numero">Número:</label>
+                    <input type="text" name="numero" placeholder="Número">
+                  </div>
+                  <div class="input">
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" name="complemento" placeholder="Complemento">
+                  </div>
+                  <div class="input">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" placeholder="Bairro">
+                  </div>
+                  <div class="input">
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" name="cidade" placeholder="Cidade">
+                  </div>
+                  <div class="input">
+                    <label for="estado">Estado:</label>
+                    <input type="text" name="estado" placeholder="Estado">
+                  </div>
+                </div>
+                <div class="button">
+                  <button>Continuar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-produto">
+            <div class="resumo-pedido">
+              <h3>Resumo do Pedido</h3>
+              <div class="produtos">
+                <div class="produto">
+                 
+                </div>
+              </div>
+              <div class="total">
+                <p>Total:</p>
+                <p>R$ 80,00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Segunda linha: Opções de Pagamento e Finalizar Compra -->
+        <div class="row">
+          <div class="col-pagamento">
+            <div class="opcoes-pagamento">
+              <h3>Opções de Pagamento</h3>
+              <div class="opcao">
+                <input type="radio" id="cartao" name="pagamento" value="cartao">
+                <label for="cartao">Cartão de Crédito</label>
+              </div>
+              <div class="opcao">
+                <input type="radio" id="boleto" name="pagamento" value="boleto">
+                <label for="boleto">Boleto Bancário</label>
+              </div>
+              <div class="opcao">
+                <input type="radio" id="pix" name="pagamento" value="pix">
+                <label for="pix">PIX</label>
+              </div>
+            </div>
+            <div class="finalizar-compra">
+              <a href="./finalizarCompra.html"><button>Finalizar Compra</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://kit.fontawesome.com/a90edbe231.js" crossorigin="anonymous"></script>
+  <script>
+    // Função para carregar os dados do carrinho
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const produtosContainer = document.querySelector('.produtos');
+      const totalContainer = document.querySelector('.total p:last-child');
+  
+      // Limpa o conteúdo atual
+      produtosContainer.innerHTML = '';
+  
+      if (cart.length === 0) {
+        produtosContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+        totalContainer.textContent = 'R$ 0,00';
+      } else {
+        let subtotal = 0;
+  
+        // Itera sobre os produtos do carrinho e os adiciona ao resumo
+        cart.forEach((product) => {
+          const produtoDiv = document.createElement('div');
+          produtoDiv.className = 'produto';
+          produtoDiv.innerHTML = `
+            <div class="produto-div">
+              <div class="discimg">
+                <div class="produto-img">
+                  <img src="${product.img}" alt="${product.name}">
+                </div>
+                <div class="disc-produto">
+                  <p>${product.name} × ${product.quantidade}</p>
+                </div>
+              </div>
+              <p>R$ ${(product.discountPrice * product.quantidade).toFixed(2)}</p>
+            </div>
+          `;
+          produtosContainer.appendChild(produtoDiv);
+  
+          // Calcula o subtotal
+          subtotal += product.discountPrice * product.quantidade;
+        });
+  
+        // Atualiza o total
+        totalContainer.textContent = `R$ ${subtotal.toFixed(2)}`;
+      }
+    }
+  
+    // Carrega os dados do carrinho ao carregar a página
+    document.addEventListener('DOMContentLoaded', loadCart);
+  </script>
+</body>
+
+</html>
